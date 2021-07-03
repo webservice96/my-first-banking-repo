@@ -23,4 +23,9 @@ class Banking_DB{
         }
     }
 
+    public function Get_column_From_Table($culumn, $table, $where, $massData){
+        $query = "SELECT {$culumn} FROM {$table} WHERE {$where} = $massData";
+        mysqli_query($this->conn, $query);
+    }
+
 }
