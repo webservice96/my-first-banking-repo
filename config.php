@@ -9,5 +9,18 @@
  * @global
  */
 class Banking_DB{
-    
+    protected const DB_HOST = 'localhost';
+    protected const DB_USER = 'root';
+    protected const DB_NAME = 'bankDB';
+    protected const DB_PASS = '';
+    private $conn;
+
+    function __construct(){
+        $this->conn = mysqli_connect(self::DB_HOST, self::DB_USER, self::DB_PASS, self::DB_NAME);
+
+        if($this->conn){
+            die("Database Connection Error!");
+        }
+    }
+
 }
